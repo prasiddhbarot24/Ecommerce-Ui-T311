@@ -43,6 +43,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         imgCustomer2.layer.borderColor = UIColor.gray.cgColor
         imgCustomer3.layer.borderColor = UIColor.gray.cgColor
         imgCustomer1.clipsToBounds = true
+//        imgCustomer1.clipsToBounds = true
 
     }
     
