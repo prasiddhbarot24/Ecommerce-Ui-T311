@@ -13,8 +13,9 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         var userReviews = [
             ["userName":"Jogn Smith","ratingText":"Excellent","rating":5.0,"description":"very good price! i love it"],
             ["userName":"Jogn Smith","ratingText":"Good","rating":4.0,"description":"very good price! i love it"],
-            ["userName":"Jogn Smith","ratingText":"Bad","rating":3.0,"description":"very good price! i love it"],
-            ["userName":"Jogn Smith","ratingText":"Excellent","rating":5.0,"description":"very good price! i love it"]
+            ["userName":"Jogn Smith","ratingText":"Avg","rating":3.0,"description":"very good price! i love it"],
+            ["userName":"Jogn Smith","ratingText":"Excellent","rating":5.0,"description":"very good price! i love it"],
+            ["userName":"Jogn Smith","ratingText":"Bad","rating":2.0,"description":"very good price! i love it"]
         ]
     @IBOutlet weak var imgCustomer1: UIImageView!
     
@@ -63,10 +64,14 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 reviewCell.contentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
             }
         
-        if(userReviews[indexPath.row]["rating"] as! Double == 5.0){
-            reviewCell.viewCell.backgroundColor = UIColor(named: "Excellent")
+        if(userReviews[indexPath.row]["rating"] as! Double == 5.0 ){
+            reviewCell.viewCell.backgroundColor = UIColor(named: "Excellent-rating-color")
+        }else if(userReviews[indexPath.row]["rating"] as! Double == 4.0 ){
+            reviewCell.viewCell.backgroundColor = UIColor(named: "Great-rating-color")
+        }else if(userReviews[indexPath.row]["rating"] as! Double == 3.0 ){
+            reviewCell.viewCell.backgroundColor = UIColor(named: "Avg-rating-color")
         }else{
-            reviewCell.viewCell.backgroundColor = UIColor(named: "Great")
+            reviewCell.viewCell.backgroundColor = UIColor(named: "Bad-rating-color")
         }
 
         reviewCell.imgUser.image = UIImage(named: "Men")
