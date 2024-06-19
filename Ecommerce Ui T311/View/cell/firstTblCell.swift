@@ -9,11 +9,12 @@ import UIKit
 
 class firstTblCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    @IBOutlet weak var tblContentView: UIView!
-    @IBOutlet weak var viewMain: UIView!
+    
     var itemNameArr = ["Google pixel tablet","Basecamp-4 persong","stailless pot","Google pixel tablet","Basecamp-4 persong","stailless pot"]
     var imageArr = ["tablet","tent-2","pot","tablet","tent-2","pot"]
     
+    @IBOutlet weak var tblContentView: UIView!
+    @IBOutlet weak var viewMain: UIView!
     @IBOutlet weak var cvItemSecond: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +23,16 @@ class firstTblCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewD
         cvItemSecond.delegate = self
         cvItemSecond.dataSource = self
     }
+    
+    override func prepareForReuse() {
+        // invoke superclass implementation
+        super.prepareForReuse()
+
+        self.contentView.clipsToBounds = true
+        self.contentView.layer.cornerRadius = 0
+        self.contentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+
+        }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

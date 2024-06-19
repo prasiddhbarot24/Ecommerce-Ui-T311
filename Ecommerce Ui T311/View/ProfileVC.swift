@@ -9,7 +9,7 @@ import UIKit
 
 class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var imgUser: UIImageView!
+    
         var userReviews = [
             ["userName":"Jogn Smith","ratingText":"Excellent","rating":5.0,"description":"very good price! i love it"],
             ["userName":"Jogn Smith","ratingText":"Good","rating":4.0,"description":"very good price! i love it"],
@@ -17,8 +17,9 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             ["userName":"Jogn Smith","ratingText":"Excellent","rating":5.0,"description":"very good price! i love it"],
             ["userName":"Jogn Smith","ratingText":"Bad","rating":2.0,"description":"very good price! i love it"]
         ]
-    @IBOutlet weak var imgCustomer1: UIImageView!
+    @IBOutlet weak var imgUser: UIImageView!
     
+    @IBOutlet weak var imgCustomer1: UIImageView!
     @IBOutlet weak var imgCustomer2: UIImageView!
     @IBOutlet weak var imgCustomer3: UIImageView!
     @IBOutlet weak var tblProfile: UITableView!
